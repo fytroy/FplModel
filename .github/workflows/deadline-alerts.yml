@@ -1,0 +1,153 @@
+# FPL deadline alerts and autopilot. Every hour, a 1-minute "gate" job asks FPL's API for the next
+# deadline. About 24 h and 3 h before it, the "advise" job runs the full recommendation and sends
+# a short ntfy message. With FPL_AUTOPILOT=on, the 3 h run applies the configured autopilot
+# policy and sets the captain and bench on your team.
+# Secrets: NTFY_TOPIC, FPL_TEAM_ID; for autopilot FPL_REFRESH_TOKEN, SECRET_WRITE_TOKEN. See README.md.
+name: FPL deadline alerts
+
+on:
+  schedule:
+    - cron: "23 * * * *"           # every hour at :23 (UTC); off the busy top of the hour
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = reach FPL + test ping; dry-run = full advice in the log only; test-send = send it now (TEST)"
+        type: choice
+        options: [check, dry-run, test-send, auto]
+        default: check
+      team:
+        description: "FPL team ID (blank = the FPL_TEAM_ID secret)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  actions: write                   # save and look up the small "already sent" caches
+
+env:
+  PYTHON_VERSION: "3.13"
+  MODE: ${{ inputs.mode || 'auto' }}
+  FPL_MESSAGE_FREQUENCY: ${{ vars.FPL_MESSAGE_FREQUENCY }}
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      gw: ${{ steps.gate.outputs.gw }}
+      stage: ${{ steps.gate.outputs.stage }}
+      deadline: ${{ steps.gate.outputs.deadline }}
+      go: ${{ steps.gate.outputs.run == 'true' && steps.sent.outputs.cache-matched-key == '' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install --quiet requests pandas tzdata
+      - id: gate
+        run: python alert.py gate --mode "$MODE"
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      # Already sent this stage? (early also counts as sent if the late one already went out.)
+      - id: sent
+        if: steps.gate.outputs.run == 'true' && env.MODE == 'auto'
+        uses: actions/cache/restore@v6
+        with:
+          path: data/alerts
+          key: alert-gw${{ steps.gate.outputs.gw }}-${{ steps.gate.outputs.stage }}
+          restore-keys: ${{ steps.gate.outputs.stage == 'early' && format('alert-gw{0}-', steps.gate.outputs.gw) || '' }}
+          lookup-only: true
+      - run: echo "Already sent for GW${{ steps.gate.outputs.gw }} (${{ steps.gate.outputs.stage }}); nothing to do."
+        if: steps.sent.outputs.cache-matched-key != ''
+      # If the gate itself fails (e.g. FPL blocks GitHub), say so at most once a day.
+      - id: today
+        if: failure()
+        run: echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+      - id: gate-fail
+        if: failure()
+        uses: actions/cache/restore@v6
+        with:
+          path: .fail-marker
+          key: gate-fail-${{ steps.today.outputs.date }}
+          lookup-only: true
+      - if: failure() && steps.gate-fail.outputs.cache-hit != 'true'
+        run: |
+          curl -s -H "Title: FPL alerts: check failed" -H "Priority: 4" -H "Tags: warning" \
+            -d "The hourly deadline check couldn't run (FPL's API or GitHub problem). If a deadline is near, check your team yourself. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            "https://ntfy.sh/${{ secrets.NTFY_TOPIC }}"
+          mkdir -p .fail-marker && date -u > .fail-marker/at
+      - if: failure() && steps.gate-fail.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .fail-marker
+          key: gate-fail-${{ steps.today.outputs.date }}
+
+  advise:
+    needs: gate
+    if: needs.gate.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency:
+      group: fpl-advise
+      cancel-in-progress: false
+    env:
+      GW: ${{ needs.gate.outputs.gw }}
+      STAGE: ${{ needs.gate.outputs.stage }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install --quiet -r requirements.txt
+      # Past seasons (24 MB) are cached between runs; a miss just downloads them again.
+      - uses: actions/cache@v6
+        with:
+          path: data/raw/vaastav
+          key: vaastav-${{ hashFiles('fpl/seasons.py') }}
+      - run: python pull_history.py
+      # What was sent earlier for this gameweek (the late re-check compares against it).
+      - if: env.MODE == 'auto'
+        uses: actions/cache/restore@v6
+        with:
+          path: data/alerts
+          key: alert-gw${{ env.GW }}-${{ env.STAGE }}
+          restore-keys: alert-gw${{ env.GW }}-
+      - id: run
+        run: |
+          FLAGS=""
+          if [ "$MODE" = "dry-run" ]; then FLAGS="--dry-run"; fi
+          if [ "$MODE" = "test-send" ]; then FLAGS="--test"; fi
+          python alert.py run --stage "$STAGE" $FLAGS
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          FPL_TEAM_ID: ${{ inputs.team || secrets.FPL_TEAM_ID }}
+          FPL_AUTOPILOT: ${{ vars.FPL_AUTOPILOT }}
+          FPL_AUTOPILOT_POLICY: ${{ vars.FPL_AUTOPILOT_POLICY }}
+          FPL_MESSAGE_FREQUENCY: ${{ vars.FPL_MESSAGE_FREQUENCY }}
+          FPL_REFRESH_TOKEN: ${{ secrets.FPL_REFRESH_TOKEN }}
+          SECRET_WRITE_TOKEN: ${{ secrets.SECRET_WRITE_TOKEN }}
+      - if: steps.run.outputs.saved == 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: data/alerts
+          key: alert-gw${{ env.GW }}-${{ env.STAGE }}
+      # A failed run tells you once per gameweek and stage (manual runs: every time).
+      - id: fail-seen
+        if: failure()
+        uses: actions/cache/restore@v6
+        with:
+          path: .fail-marker
+          key: fail-gw${{ env.GW }}-${{ env.STAGE }}${{ github.event_name == 'schedule' && '' || format('-{0}', github.run_id) }}
+          lookup-only: true
+      - if: failure() && steps.fail-seen.outputs.cache-hit != 'true'
+        run: |
+          curl -s -H "Title: FPL alert failed for GW${GW}" -H "Priority: 5" -H "Tags: rotating_light" \
+            -d "The ${STAGE} advice run failed (deadline ${{ needs.gate.outputs.deadline }}, Nairobi time). It retries next hour while the window is open; check your team yourself if nothing arrives. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            "https://ntfy.sh/${{ secrets.NTFY_TOPIC }}"
+          mkdir -p .fail-marker && date -u > .fail-marker/at
+      - if: failure() && steps.fail-seen.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .fail-marker
+          key: fail-gw${{ env.GW }}-${{ env.STAGE }}${{ github.event_name == 'schedule' && '' || format('-{0}', github.run_id) }}

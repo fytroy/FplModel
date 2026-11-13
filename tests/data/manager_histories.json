@@ -1,0 +1,1098 @@
+[
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 1
+   },
+   {
+    "name": "freehit",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 1
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 2
+   },
+   {
+    "name": "freehit",
+    "event": 3
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 5,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 5,
+    "event_transfers_cost": 16
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 2
+   },
+   {
+    "name": "wildcard",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "freehit",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 4
+   },
+   {
+    "name": "3xc",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 2
+   },
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 11,
+    "event_transfers_cost": 40
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 2
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 1
+   },
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   },
+   {
+    "name": "freehit",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "freehit",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 3
+   },
+   {
+    "name": "bboost",
+    "event": 4
+   },
+   {
+    "name": "freehit",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 4,
+    "event_transfers_cost": 12
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "freehit",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 2,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 3,
+    "event_transfers_cost": 8
+   },
+   {
+    "event": 5,
+    "event_transfers": 5,
+    "event_transfers_cost": 16
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 6
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 3
+   },
+   {
+    "name": "3xc",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 1
+   },
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "freehit",
+    "event": 5
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "wildcard",
+    "event": 3
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 4,
+    "event_transfers_cost": 12
+   },
+   {
+    "event": 3,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 5,
+    "event_transfers": 2,
+    "event_transfers_cost": 4
+   },
+   {
+    "event": 6,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "bboost",
+    "event": 2
+   },
+   {
+    "name": "wildcard",
+    "event": 3
+   }
+  ]
+ },
+ {
+  "current": [
+   {
+    "event": 1,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 2,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 3,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 4,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 5,
+    "event_transfers": 1,
+    "event_transfers_cost": 0
+   },
+   {
+    "event": 6,
+    "event_transfers": 0,
+    "event_transfers_cost": 0
+   }
+  ],
+  "chips": [
+   {
+    "name": "3xc",
+    "event": 3
+   },
+   {
+    "name": "wildcard",
+    "event": 4
+   }
+  ]
+ }
+]

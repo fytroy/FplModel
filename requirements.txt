@@ -1,0 +1,9 @@
+requests
+pandas
+numpy
+lightgbm
+pytest
+scikit-learn
+pulp>=2.8,<3
+tzdata
+highspy>=1.15,<2

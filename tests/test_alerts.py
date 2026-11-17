@@ -199,6 +199,16 @@ def test_autopilot_reports_what_it_did(monkeypatch, tmp_path):
     assert sent[0][1] == "FPL GW7: team updated" and "Done: A -> B" in sent[0][2]
 
 
+def test_updated_only_still_reports_an_autopilot_update(monkeypatch, tmp_path):
+    from fpl import autopilot
+    monkeypatch.setenv("FPL_MESSAGE_FREQUENCY", "updated_only")
+    a = tiny_advice([])
+    a.safe_plan = a.plan
+    done = autopilot.Orders(7, [], [], ["A -> B"])
+    sent = run_pilot(monkeypatch, tmp_path, a, lambda *args: done)
+    assert sent[0][1] == "FPL GW7: team updated"
+
+
 def test_autopilot_standing_down_says_why(monkeypatch, tmp_path):
     from fpl import autopilot
 

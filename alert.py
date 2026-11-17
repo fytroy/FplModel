@@ -106,7 +106,7 @@ def run(stage: str, team: int, dry_run: bool = False, test: bool = False, topic_
     frequency = os.environ.get("FPL_MESSAGE_FREQUENCY", MESSAGE_FREQUENCY).strip().lower()
     if report:
         action = "full"
-    elif frequency == "updated_only":
+    elif frequency == "updated_only" and not report:
         action = None
     changes = alerts.changed(record["decisions"], new) if action == "changed" else None
     title, body = alerts.short_message(a, changes, test=test)
